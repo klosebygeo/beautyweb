@@ -5,7 +5,7 @@
 
 ## Descriere
 
-Aceasta aplicatie este destinata sa fie utilizata de clientii unui salon de infrumusetare. Utilizatorii pot vedea o lista de servicii disponibile, programarile lor, cu mentiunea ca pentru orice programare este nevoie de un avans de 10% din constul serviciului.
+Aceasta aplicatie este destinata sa fie utilizata de clientii unui salon de infrumusetare. Utilizatorii pot vedea o lista de servicii disponibile, programarile lor, cu mentiunea ca pentru orice programare este nevoie de un avans de 10% din costul serviciului.
 
 
 ## Caracteristici
@@ -24,7 +24,7 @@ Aceasta aplicatie este destinata sa fie utilizata de clientii unui salon de infr
 
 * Inregistrarea cardului bancar pentru confirmarea programarii
 
-## TEhnologii utilizate
+## Tehnologii utilizate
 
 * Python
 
