@@ -1,3 +1,8 @@
 body{
     background-color: green;
 }
+
+@font-face {
+    font-family: "beauty";
+    src: local('beauty'), url("../homede_apple/beauty.ttf") format('truetype');
+}
