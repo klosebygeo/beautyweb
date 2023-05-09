@@ -1,8 +1,49 @@
-body{
-    background-color: green;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color:#1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #F000FC;
+}
+
+html{
+    font-size: 62.5%;
+    overflow: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 @font-face {
     font-family: "beauty";
-    src: local('beauty'), url("../homede_apple/beauty.ttf") format('truetype');
+    src: url("beauty.woff") ;
+    font-weight: auto;
 }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100%;
+}
+
