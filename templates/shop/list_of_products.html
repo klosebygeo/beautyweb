@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block title %}Lista de produse{% endblock %}
 
 {% block content %}
@@ -10,23 +9,29 @@
     <br>
     <br>
 
-<div class="container">
-{% include './vertical_navbar.html' %}
-  <div class="row">
-    {% for product_key, product in products.items %}
-    <div class="col-md-4">
-      <div class="card">
-        <img src="{{ product.image }}" class="card-img-top" alt="Product Image">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">Pret: {{ product.price }} RON</p>
-          <p class="card-text">Cantitate: {{ product.quantity }} ml</p>
-          <p class="card-text">Descriere: {{ product.description }}</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                {% include './vertical_navbar.html' %}
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    {% for product_key, product in products.items %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="{{ product.image }}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">Pret: {{ product.price }} RON</p>
+                                <p class="card-text">Cantitate: {{ product.quantity }} ml</p>
+                                <p class="card-text">Descriere: {{ product.description }}</p>
+                                <a href="#" class="btn btn-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    {% endfor %}
-  </div>
-</div>
 {% endblock content %}

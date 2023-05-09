@@ -26,6 +26,36 @@ class ShopTemplateView(TemplateView):
                 'price': 299,
                 'description': 'Uz zilnic',
             },
+            'product4': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            },
+            'product5': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            },
+            'product6': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            },
+            'product7': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            },
+            'product8': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            },
+            'product9': {
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
+            }
         }
         context['products'] = products
         return context
