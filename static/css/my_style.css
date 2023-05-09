@@ -77,6 +77,10 @@ section {
     display: none;
 }
 
+.dropdown-menu {
+    background-color: var(--bg-color);
+}
+
 .home {
     display: flex;
     justify-content: center;
@@ -130,13 +134,14 @@ section {
 
 .btn {
     display: inline-block;
-    padding: 1rem 2.8rem;
+    padding: 12px 28px;
     background: var(--main-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size:1.6rem;
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--main-color);
+    font-size:16px;
     color: var(--second-bg-color);
-    letter-spacing: .1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
     font-weight: 600;
     transition: .5s ease;
 }
