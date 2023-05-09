@@ -10,19 +10,21 @@ class ShopTemplateView(TemplateView):
         context = super().get_context_data(**kwargs)
         products = {
             'product1': {
-                'name': 'Product 1',
-                'price': 10.99,
-                'description': 'This is the first product.',
+                'name': 'Sampon par uscat si deteriorat',
+                'price': '255',
+                'quantitity':'1000',
+                'description': 'Pentru uz zilnic.',
             },
             'product2': {
-                'name': 'Product 2',
-                'price': 19.99,
-                'description': 'This is the second product.',
+                'name': 'Sampon par vopsit',
+                'price': 225,
+                'quantitity': '1000',
+                'description': 'Pentru uz zilnic.',
             },
             'product3': {
-                'name': 'Product 3',
-                'price': 5.99,
-                'description': 'This is the third product.',
+                'name': 'Sampon pentru par gras',
+                'price': 299,
+                'description': 'Uz zilnic',
             },
         }
         context['products'] = products

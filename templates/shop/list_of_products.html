@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 
 
-{% block title %}List of products{% endblock %}
+{% block title %}Lista de produse{% endblock %}
 
 {% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 <div class="container">
+{% include './vertical_navbar.html' %}
   <div class="row">
     {% for product_key, product in products.items %}
     <div class="col-md-4">
       <div class="card">
-        <img src="#" class="card-img-top" alt="Product Image">
+        <img src="{{ product.image }}" class="card-img-top" alt="Product Image">
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">Price: ${{ product.price }}</p>
-          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text">Pret: {{ product.price }} RON</p>
+          <p class="card-text">Cantitate: {{ product.quantity }} ml</p>
+          <p class="card-text">Descriere: {{ product.description }}</p>
           <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
