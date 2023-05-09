@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalii - {{ employee }} {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br><br>
+                <div class="card text-center">
+                    <div class="card-header">
+                       View details
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        Created at : {{ employee.created_at|date:"d-m-Y H:i:s" }}/ Update at: {{ employee.updated_at|date:"d-m-Y H:i:s" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

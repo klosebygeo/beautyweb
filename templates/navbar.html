@@ -4,13 +4,21 @@
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
-        <a href="{% url 'homepage' %}"  class="active">Home</a>
+        <a href="{% url 'homepage' %}" class="active">Home</a>
         <a href="{% url 'shop' %}" style="--i:3">Shop</a>
         <a href="#programari" style="--i:3">Programari</a>
         <a href="{% url 'contact-us' %}" style="--i:4">Contact</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                Employee
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'create-employee' %}">Create a new employee</a></li>
+                <li><a class="dropdown-item" href="{% url 'list-of-employees' %}">List of employees</a>
+                </li>
+            </ul>
+        </li>
         <a href="#login" style="--i:5">Login</a>
     </nav>
-
-
-
 </header>
