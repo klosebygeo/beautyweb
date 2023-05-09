@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
-{% load static %}
+
 
 {% block title %}List of products{% endblock %}
 
 {% block content %}
+
 <div class="container">
   <div class="row">
     {% for product_key, product in products.items %}
     <div class="col-md-4">
       <div class="card">
-        <img src="{% static '' %}" class="card-img-top" alt="Product Image">
+        <img src="#" class="card-img-top" alt="Product Image">
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">Price: ${{ product.price }}</p>
@@ -21,4 +22,4 @@
     {% endfor %}
   </div>
 </div>
-{% endblock %}
+{% endblock content %}
