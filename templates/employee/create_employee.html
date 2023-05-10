@@ -10,25 +10,44 @@
         list-style-type: none;
     }
     </style>
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><br>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Creare angajat nou</h3>
-                    </div>
-
-                    <form method="post">
+{#<br>#}
+{#    <br>#}
+{#    <br>#}
+{#    <br>#}
+{#    <br>#}
+{#    <br>#}
+{#    <br>#}
+{#    <div class="container-fluid">#}
+{#        <div class="row">#}
+{#            <div class="col-md-6 offset-md-3">#}
+{#                <br><br>#}
+{#                <div class="card">#}
+{#                    <div class="card-header">#}
+{#                        <h3 class="text-center">Creare angajat nou</h3>#}
+{#                    </div>#}
+{##}
+{#                    <form method="post">#}
                         {# csrf -> Cross site request fogery protection #}
-                        {% csrf_token %} {# utilizata pentru a preveni atacurile rau intentionate #}
+{#                        {% csrf_token %} {# utilizata pentru a preveni atacurile rau intentionate #}
+{#                        <div class="card-body">#}
+{#                            {{ form.as_p }}#}
+{#                        </div>#}
+{#                        <div class="card-footer text-center">#}
+{#                            <button type="submit" class="btn btn-success">Save</button>#}
+{#                        </div>#}
+{#                    </form>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+<section class="contact" id="contact">
+    <h2 class="heading">Creare <span>Angajat </span></h2>
+
+    <form method="post">
+{#         {% csrf %} -> Cross site request fogery protection#}
+                        {% csrf_token %}
                         <div class="card-body">
                             {{ form.as_p }}
                         </div>
@@ -36,13 +55,7 @@
                             <button type="submit" class="btn btn-success">Save</button>
                         </div>
                     </form>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+</section>
 
 
 
