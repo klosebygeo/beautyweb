@@ -33,11 +33,6 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-@font-face {
-    font-family: "beauty";
-    src: url("beauty.woff") ;
-    font-weight: auto;
-}
 
 .header {
     position: fixed;
