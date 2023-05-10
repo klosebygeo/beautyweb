@@ -1,14 +1,14 @@
 <header class="header">
-    <a href="{% url 'homepage' %}" class="logo">Rise & Shine Beauty Salon</a>
+    <a class="navbar-brand" style="font-size: 20px"  href="{% url 'homepage' %}" >Rise & Shine Beauty Salon</a>
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
-        <a href="{% url 'homepage' %}" class="active">Home</a>
-        <a href="{% url 'shop' %}" style="--i:3">Shop</a>
-        <a href="# programari" style="--i:3">Programari</a>
-        <a href="#">Servicii</a>
-        <a href="{% url 'contact-us' %}" style="--i:3">Contact</a>
+        <div class="container-fluid">
+        <a class="nav-link" href="{% url 'homepage' %}" >Home</a>
+        <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+        <a class="nav-link" href="# programari">Make an appointment</a>
+        <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
@@ -20,6 +20,7 @@
                 </li>
             </ul>
         </li>
-        <a href="#login" style="--i:5">Login</a>
+        <a class="nav-link" href="#login" style="--i:5">Login</a>
+            </div>
     </nav>
 </header>
