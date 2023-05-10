@@ -28,7 +28,7 @@ class EmployeeForm(forms.ModelForm):
         cleaned_data = self.cleaned_data  # stocam un dictionar cu toate valorile completate de utilizator in formular
         get_email = cleaned_data[
             'email']  # cleaned_data.get('email') -> accesam valoarea cheii email din dictionar-> valoarea introdusa de utilizator
-        check_emails = Student.objects.filter(
+        check_emails = Employee.objects.filter(
             email=get_email)  # cautam in tabela toti studenti care au adresa de email = cea introdusa de utilizator
         if check_emails:  # daca exista un student cu adresa de email, generaram eroare
             msg = 'Email already exists in database'
