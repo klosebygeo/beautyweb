@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
+from programari.models import Service
+
 
 class AppointmentCreateView(CreateView):
-    template_name = ''
-    model = ''
+    template_name = 'programari/create_service.html'
+    model = Service
     form_class = ''
     success_url = reverse_lazy('homepage')
 

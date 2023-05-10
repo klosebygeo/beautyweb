@@ -7,7 +7,17 @@
         <div class="container-fluid">
         <a class="nav-link" href="{% url 'homepage' %}" >Home</a>
         <a class="nav-link" href="{% url 'shop' %}">Shop</a>
-        <a class="nav-link" href="# programari">Make an appointment</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                Fa-ti o programare!
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}">Creaza un nou serviciu</a></li>
+                <li><a class="dropdown-item" href="#}">List of employees</a>
+                </li>
+            </ul>
+        </li>
         <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
