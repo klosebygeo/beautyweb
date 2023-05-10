@@ -33,7 +33,11 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-
+@font-face {
+    font-family: "beauty";
+    src: url("beauty.woff") ;
+    font-weight: auto;
+}
 
 .header {
     position: fixed;
@@ -272,4 +276,9 @@ span {
         font-size: 2rem;
         margin: 3rem 0;
     }
+}
+
+.produs{
+    height: 60px;
+    width: 50px;
 }

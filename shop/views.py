@@ -14,22 +14,26 @@ class ShopTemplateView(TemplateView):
                 'price': '255',
                 'quantitity':'1000',
                 'description': 'Pentru uz zilnic.',
+                'image':'../static/img/sampon1.jpg',
             },
             'product2': {
                 'name': 'Sampon par vopsit',
                 'price': 225,
                 'quantitity': '1000',
                 'description': 'Pentru uz zilnic.',
+                'image': '../static/img/sampon2.jpg',
             },
             'product3': {
                 'name': 'Sampon pentru par gras',
                 'price': 299,
                 'description': 'Uz zilnic',
+                'image': '../static/img/sampon3.jpg',
             },
             'product4': {
                 'name': 'Sampon pentru par gras',
                 'price': 299,
                 'description': 'Uz zilnic',
+                'image': '../static/img/sampon4.jpg',
             },
             'product5': {
                 'name': 'Sampon pentru par gras',
