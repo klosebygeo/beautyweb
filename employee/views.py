@@ -16,7 +16,7 @@ from employee.models import Employee
 
 
 
-class EmployeeCreateView( CreateView):
+class EmployeeCreateView(CreateView):
     template_name = 'employee/create_employee.html' # scriem calea catre pagina html unde vor gasi formularul generat
     model = Employee
     form_class = EmployeeForm
