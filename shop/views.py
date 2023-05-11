@@ -21,14 +21,14 @@ class ShopTemplateView(TemplateView):
                 'price': 175,
                 'quantity': '500',
                 'description': 'Hidratare, Protecția culorii',
-                'image': '../static/img/sampon2.jpg',
+                'image': '../static/img/sampon6.jpg',
             },
             'product3': {
                 'name': 'Sampon pentru par gras',
                 'price': 215,
                 'quantity': '500',
                 'description': 'Curata eficient scalpul',
-                'image': '../static/img/sampon3.jpg',
+                'image': '../static/img/sampon7.jpg',
             },
             'product4': {
                 'name': 'Sampon pentru par lipsit de volum',
@@ -63,7 +63,7 @@ class ShopTemplateView(TemplateView):
                 'price': 375,
                 'quantity': '1000',
                 'description': 'Hidratare, Protecția culorii',
-                'image': '../static/img/sampon2.jpg',
+                'image': '../static/img/sampon6.jpg',
 
             },
             'product9': {
@@ -71,7 +71,7 @@ class ShopTemplateView(TemplateView):
                 'price': 215,
                 'quantity': '1000',
                 'description': 'Curata eficient scalpul si parul',
-                'image': '../static/img/sampon3.jpg',
+                'image': '../static/img/sampon7.jpg',
             }
         }
         context['products'] = products
@@ -105,6 +105,55 @@ class BarbaTemplateView(TemplateView):
                 'quantity': '2 x75 ml',
                 'description': 'Mentine barba sanatoasa si stralucitoare',
                 'image': '../static/img/barba3.jpg',
+            },
+
+        }
+        context['products'] = products
+        return context
+
+
+
+class AccesoriiTemplateView(TemplateView):
+    template_name = 'shop/accesorii.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        products = {
+            'product1': {
+                'name': 'Perie de par',
+                'price': 83,
+                'description': 'Perie de par cu peri de mistret si fire de nailon',
+                'image':'../static/img/accesorii1.png',
+            },
+            'product2': {
+                'name': 'Pieptene',
+                'price': 54,
+                'description': 'Permite crearea de coafuri texturizate/tapate',
+                'image': '../static/img/accesorii2.png',
+            },
+            'product3': {
+                'name': 'Perie rotativa',
+                'price': 115,
+                'description': 'Peria are un diametru de 63 mm,recomandat pentru par mediu si lung',
+                'image': '../static/img/accesorii3.png',
+            },
+            'product4': {
+                'name': 'Perie barba',
+                'price': 45,
+                'description': 'Realizata din lemn iar perii sunt o combinatie dintre un mixt sintetic si par de mistret',
+                'image': '../static/img/accesorii4.png',
+            },
+            'product5': {
+                'name': 'Foarfeca pentru barba si mustata',
+                'price': 38,
+                'description': 'Este foarte mica, usoara si foarte versatila, putand fi folosita pentru a retusa micile detalii',
+                'image': '../static/img/accesorii5.png',
+            },
+            'product6': {
+                'name': 'Aparat pentru tuns',
+                'price': 421,
+                'description': '30 de reglaje precise pentru lungimea de taiere, de la 0.5 la 15 mm; pana la 90 minute de utilizare',
+                'image': '../static/img/accesorii6.png',
             },
 
         }
