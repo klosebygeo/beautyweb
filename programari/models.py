@@ -8,7 +8,7 @@ class Service(models.Model):
 
     name_of_service = models.TextField(max_length=300)
     price = models.IntegerField()
-    employee = models.CharField(max_length=30)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name_of_service
