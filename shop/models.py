@@ -1,11 +1,11 @@
 
 from django.db import models
 
-PRODUCT_TYPES = [
-    (1, 'Ingrijire par'),
-    (2, 'Ingrijire barba'),
-    (3, 'Accesorii'),
-]
+PRODUCT_TYPES = (
+    ("1", 'Ingrijire par'),
+    ("2", 'Ingrijire barba'),
+    ("3", 'Accesorii'),
+)
 
 class Product(models.Model):
     name = models.CharField(max_length=50, null=False)
