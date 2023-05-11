@@ -2,13 +2,7 @@
 {% block title %} List of employees {% endblock %}
 
 {% block content %}
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<section>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -30,33 +24,33 @@
                 </div>
             </div>
             <div class="col-md-9">
-                                {{ current_datetime }}
-                                {% for trainer in get_all_trainers %}
-                                    <p>{{ trainer.first_name }} {{ trainer.last_name }} {{ trainer.course }}</p>
-
-                                {% endfor %}
+{#                                {{ current_datetime }}#}
+{#                                {% for trainer in get_all_trainers %}#}
+{#                                    <p>{{ trainer.first_name }} {{ trainer.last_name }} {{ trainer.course }}</p>#}
+{##}
+{#                                {% endfor %}#}
                 {% if all_employees %}
-                    <table class="table">
+                    <table class="tabela">
                         <thead>
                         <tr>
-                            <th> First Name</th>
-                            <th> Last Name</th>
-                            <th> Email</th>
-                            <th> Status</th>
-                            <th> Start date</th>
-                            <th> Name of trainer</th>
-                            <th> Course</th>
+                            <th> First Name </th>
+                            <th> Last Name </th>
+                            <th> Age </th>
+                            <th> Email </th>
+                            <th> Active/Inactive </th>
                             <th> Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for employee in all_employees %}
                             <tr>
-                                <td>{{ employee.first_name }}</td>
-                                <td>{{ employee.last_name }}</td>
+                                <td>{{ employee.first_name }}
+                                </td>
+                                <td>{{ employee.last_name }}
+                                </td>
+                                <td>{{ employee.age }}</td>
                                 <td>{{ employee.email }}</td>
                                 <td>{% if employee.active %} Active {% else %} Inactive {% endif %}</td>
-                                <td>{{ employee.start_date|date:"d/m/Y" }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -85,31 +79,8 @@
                                     </div>
                                 </td>
                             </tr>
-                            {%  if perms.employee.inactivate_employee %}
-                            <!-- Modal -->
-                            <div class="modal fade" id="employee_{{ employee.id }}" tabindex="-1"
-                                 aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ employee }}</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure you want to deactivate {{ employee }} ?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                No
-                                            </button>
-                                            <a href="{% url 'deactivate-employee' employee.id %}" class="btn btn-danger">Yes</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endif %}
+
+
                         {% endfor %}
                         </tbody>
                     </table>
@@ -119,5 +90,5 @@
             </div>
         </div>
     </div>
-
+</section>
 {% endblock %}

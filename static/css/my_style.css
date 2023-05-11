@@ -227,6 +227,15 @@ span {
     color: var(--second-bg-color);
 }
 
+.tabela {
+    color: white;
+    width: 100%;
+}
+
+
+
+
+
 /*BREAKPOINTS*/
 @media (max-width: 1200px) {
     html {
@@ -283,3 +292,5 @@ span {
   justify-content: center;
   align-items: center;
 }
+
+
