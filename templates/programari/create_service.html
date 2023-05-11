@@ -2,25 +2,21 @@
 
 {% block title %} Creaza un nou serviciu {% endblock %}
 
+<br><br><br><br>
+
 {% block content %}
-     <div class="container-fluid">
-     <div class="row">
-         <div class="col-md-6 offset-md-3">
-             <div class="card">
-                 <div class="card-header">
-                     <h3 class="text-center">Creaza un nou serviciu </h3>
-                 </div>
-                 <form method="post">
-                     {% csrf_token %}
-                     <div class="card-body">
-                         {{ form.as_p }}
-                     </div>
-                     <div class="card-footer text-center">
-                         <button type="submit" class="btn btn-succcess">Salveaza</button>
-                     </div>
-                 </form>
-             </div>
-         </div>
-     </div>
-     </div>
+
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Creare <span>serviciu </span></h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="card-body">
+                {{ form.as_p }}
+            </div>
+            <div class="card-footer text-center">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </section>
 {% endblock %}
