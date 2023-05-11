@@ -35,7 +35,7 @@ class ShopTemplateView(TemplateView):
                 'price': 299,
                 'quantity': '1000',
                 'description': 'Uz zilnic',
-                'image': '../static/img/sampon4.jpg',
+                'image': '../static/img/sampon10.png',
             },
             'product5': {
                 'name': 'Sampon pentru par ondulat',
