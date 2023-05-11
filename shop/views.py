@@ -49,7 +49,7 @@ class ShopTemplateView(TemplateView):
                 'price': 455,
                 'quantity': '1000',
                 'description': 'Hraneste si hidrateaza in profunzime.',
-                'image': '../static/img/sampon1.jpg',
+                'image': '../static/img/sampon8.jpg',
             },
             'product7': {
                 'name': 'Sampon pentru par blond',
