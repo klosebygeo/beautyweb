@@ -14,7 +14,7 @@ class ShopTemplateView(TemplateView):
                 'price': 155,
                 'quantity':'500',
                 'description': 'Netezeste si regenereaza parul',
-                'image':'../static/img/sampon1.jpg',
+                'image':'../static/img/sampon9.jpg',
             },
             'product2': {
                 'name': 'Sampon par vopsit',
