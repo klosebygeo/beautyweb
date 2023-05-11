@@ -56,7 +56,7 @@ class ShopTemplateView(TemplateView):
                 'price': 299,
                 'quantity': '1000',
                 'description': 'Neutralizeaza reflexele galbene',
-                'image': '../static/img/sampon4.jpg',
+                'image': '../static/img/sampon11.jpg',
             },
             'product8': {
                 'name': 'Sampon par vopsit',
