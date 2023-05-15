@@ -133,11 +133,11 @@ span {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 7px 10px;
     background: var(--main-color);
     border-radius: 40px;
     box-shadow: 0 0 10px var(--main-color);
-    font-size:16px;
+    font-size:12px;
     color: var(--second-bg-color);
     letter-spacing: 1px;
     text-decoration: none;
