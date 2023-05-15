@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete - {{ service }} {% endblock %}
+
+<br><br><br><br>
+
+{% block content %}
+
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Delete - <span>{{ service }} </span></h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="card-body">
+                <p>Esti sigur ca vrei sa stergi acest serviciu?</p>
+            </div>
+            <div class="card-footer text-center">
+                <button type="submit" class="btn btn-success">Da</button>
+                <a href="{% url 'list-of-services' %}" class="btn btn-secondary">Nu</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

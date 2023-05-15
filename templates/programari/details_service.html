@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Details - {{ service }} {% endblock %}
+
+<br><br><br><br>
+
+{% block content %}
+    <section class="contact" id="contact">
+        <h2 class="heading">Detalis</h2>
+
+            <div class="card-body">
+                <p class="card-text"style="font-size: 20px"><b>Numele serviciului:</b> {{ service.name_of_service }}</p>
+                <p class="card-text" style="font-size: 20px"><b>Pretul serviciului:</b>> {{ service.price }}</p>
+                <p class="card-text" style="font-size: 20px"><b>Angajat:</b> {{ service.employee }}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'list-of-services' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+
+    </section>
+{% endblock %}

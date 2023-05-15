@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 
 from programari.models import Service
-from programari.forms import ServiceForm
+from programari.forms import ServiceForm, ServiceUpdateForm
 
 
 class ServiceCreateView(CreateView):
@@ -19,4 +19,25 @@ class ServiceListView(ListView):
 
     def get_queryset(self):
         return Service.objects.all()
+
+
+class ServiceUpdateView(UpdateView):
+    template_name = 'programari/update_service.html'
+    model = Service
+    form_class = ServiceUpdateForm
+    success_url = reverse_lazy('list-of-services')
+
+
+class ServiceDeleteView(DeleteView):
+    template_name = 'programari/delete_service.html'
+    model = Service
+    success_url = reverse_lazy('list-of-services')
+
+
+class ServiceDetailView(DetailView):
+    template_name = 'programari/details_service.html'
+    model = Service
+    success_url = reverse_lazy('list-of-services')
+
+
 
