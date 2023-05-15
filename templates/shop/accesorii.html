@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Lista de produse{% endblock %}
 
 {% block content %}
@@ -11,10 +11,10 @@
             </div>
             <div class="col-md-8">
                 <div class="row">
-                    {% for product_key, product in products.items %}
+                      {% for product in products %}
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img class="produs" src="{{ product.image }}"  class="card-img-top" alt="Image">
+                            <img class="produs" src="{% static product.image.url %}"  class="card-img-top" alt="Image">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-text">Pret: {{ product.price }} RON</p>
