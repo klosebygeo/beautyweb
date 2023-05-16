@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'shop',
     'employee',
     'programari',
+    'userextend',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,16 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR , 'static')]
+
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST='mail.horiascurtu.eu'
+EMAIL_HOST_USER = 'ro38group@horiascurtu.eu'
+EMAIL_HOST_PASSWORD = 'Django1234!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

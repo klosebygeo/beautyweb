@@ -1,36 +1,37 @@
 <header class="header">
-    <a class="navbar-brand" style="font-size: 20px"  href="{% url 'homepage' %}" >Rise & Shine Beauty Salon</a>
+    <a class="navbar-brand" style="font-size: 20px" href="{% url 'homepage' %}">Rise & Shine Beauty Salon</a>
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
         <div class="container-fluid">
-        <a class="nav-link" href="{% url 'homepage' %}" >Home</a>
-        <a class="nav-link" href="{% url 'shop' %}">Shop</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
-                Fa-ti o programare!
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}">Creaza un nou serviciu</a></li>
-                <li><a class="dropdown-item" href="{% url 'list-of-services' %}">Servicii</a>
-                </li>
-            </ul>
-        </li>
-        <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
-                Employee
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'create-employee' %}">Create a new employee</a></li>
-                <li><a class="dropdown-item" href="{% url 'list-of-employees' %}">List of employees</a>
-                </li>
-            </ul>
-        </li>
-        <a class="nav-link" href="#login" style="--i:5">Login</a>
-            </div>
+            <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+            <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    Fa-ti o programare!
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}">Creaza un nou serviciu</a></li>
+                    <li><a class="dropdown-item" href="{% url 'list-of-services' %}">Servicii</a>
+                    </li>
+                </ul>
+            </li>
+            <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    Employee
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'create-employee' %}">Create a new employee</a></li>
+                    <li><a class="dropdown-item" href="{% url 'list-of-employees' %}">List of employees</a>
+                    </li>
+                </ul>
+            </li>
+            <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
+            <a href="{% url 'create-user' %}" class="btn btn-outline-secondary">Sign up</a>
+        </div>
     </nav>
 </header>
