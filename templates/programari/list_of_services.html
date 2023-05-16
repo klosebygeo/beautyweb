@@ -27,21 +27,20 @@
                                     </td>
                                     <td>{{ service.employee }}</td>
                                      <td><a href="{% url 'details-service' service.id %}" type="button"
-                                           class="btn btn-primary">
+                                           class="btn btn-outline-dark">
                                         <i class='bx bx-show-alt'></i>
                                     </a>
                                     </td>
                                     <td><a href="{% url 'update-service' service.id %}" type="button"
-                                           class="btn btn-primary">
+                                           class="btn btn-outline-dark">
                                         <i class='bx bx-edit'></i>
                                     </a>
                                     </td>
                                     <td><a href="{% url 'delete-service' service.id %}" type="button"
-                                           class="btn btn-primary">
+                                           class="btn btn-outline-dark">
                                         <i class='bx bx-trash'></i>
                                     </a>
                                     </td>
-
                                 </tr>
                             {% endfor %}
                             </tbody>
