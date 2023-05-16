@@ -40,4 +40,8 @@ class ServiceDetailView(DetailView):
     success_url = reverse_lazy('list-of-services')
 
 
-
+class Rezervare(ListView):
+    template_name = 'programari/rezervare.html'
+    model = Service
+    context_object_name = 'all_services'
+    success_url = reverse_lazy('homepage')
