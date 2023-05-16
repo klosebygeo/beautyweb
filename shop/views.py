@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import ListView, DetailView
 from .models import Product
 
 
@@ -53,8 +53,9 @@ class AccesoriiListView(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
+    template_name = 'shop/product_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
-
-    template_name = 'shop/product_detail.html'
+        context['product_description'] = self.object.description
+        return context
