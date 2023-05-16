@@ -17,11 +17,15 @@
                                     <img class="produs" src="{% static product.image.url %}" class="card-img-top"
                                          alt="Image">
                                     <div class="card-body">
+                                        <a href="{% url 'details' product.id %}">
+                                       <span style="cursor: pointer;">
                                         <h5 class="card-title">{{ product.name }}</h5>
                                         <p class="card-text">Pret: {{ product.price }} RON</p>
-                                        <p class="card-text">Cantitate: {{ product.quantity }} ml</p>
+                                        <p class="card-text">Cantitate: {{ product.quantity }}({{ product.um }})</p>
                                         <p class="card-text">Descriere: {{ product.description }}</p>
-                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                         </span>
+                                    </a>
+                                        <a href="" class="btn btn-primary">Add to Cart</a>
                                     </div>
                                 </div>
                             </div>

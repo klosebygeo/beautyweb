@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('', include('contact.urls')),
-    path('', include('shop.urls')),
+    path('shop/', include('shop.urls')),
     path('', include('employee.urls')),
     path('', include('programari.urls')),
     path("login/", views.LoginView.as_view(form_class=AuthenticationNewForm), name="login"),

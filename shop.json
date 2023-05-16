@@ -1,0 +1,1 @@
+[{"model": "shop.product", "pk": 1, "fields": {"name": "Sampon par uscat si deteriorat", "price": 155.0, "quantity": 750, "description": "Netezeste si regenereaza parul", "image": "uploads/sampon10.PNG", "tip_produs": "1"}}, {"model": "shop.product", "pk": 2, "fields": {"name": "Sampon par vopsit", "price": 238.0, "quantity": 1000, "description": 
