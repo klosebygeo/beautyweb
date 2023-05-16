@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>Detaliiiii</p>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Detalii produse{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div class="col-md-12">
+        {% include './vertical_navbar.html' %}
+    </div>
+
+    <h1>PAGE</h1>
+
+{% endblock content %}
