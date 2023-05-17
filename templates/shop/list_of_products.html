@@ -14,18 +14,17 @@
                         {% for product in products %}
                             <div class="col-md-4 mb-4">
                                 <div class="card">
-                                    <img class="produs" src="{% static product.image.url %}" class="card-img-top"
+                                    <img class="produs img-fluid" src="{% static product.image.url %}" class="card-img-top"
                                          alt="Image">
                                     <div class="card-body">
                                         <a href="{% url 'details' product.id %}">
-                                       <span style="cursor: pointer;">
-                                        <h5 class="card-title">{{ product.name }}</h5>
-                                        <p class="card-text">Pret: {{ product.price }} RON</p>
-                                         </span>
+                                           <span style="cursor: pointer;">
+                                            <h5 class="card-title">{{ product.name }}</h5>
+                                            <p class="card-text">Pret: {{ product.price }} RON</p>
+                                           </span>
                                         </a>
                                     </div>
-                                    <div class="add-cart mb-4"><a href="" class="btn btn-primary">Adauga in cos</a>
-                                    </div>
+                                    <div class="add-cart mb-4"><a href="" class="btn btn-primary">Adauga in cos</a></div>
                                 </div>
                             </div>
                         {% endfor %}
