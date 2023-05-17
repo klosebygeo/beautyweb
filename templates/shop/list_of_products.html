@@ -27,18 +27,22 @@
               <div class="card-footer">
                 <div class="row align-items-center">
                   <div class="col">
-                    <select class="form-select form-select-sm">
+                    <select class="form-select form-select-sm" >
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                       <option value="5">5</option>
                       <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                       <!-- Add more options here -->
                     </select>
                   </div>
                   <div class="col-auto">
-                    <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>
+{#                    <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>#}
                     <button type="button" class="btn btn-sm btn-primary add-to-cart" data-product-id="{{ product.id }}">Adauga in cos</button>
                   </div>
                 </div>
