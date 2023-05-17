@@ -163,11 +163,11 @@ span {
     font-weight: 600;
 }
 
-    25% {
-        background: var(--bg-color);
-    }
+/*25% {*/
+/*        background: var(--bg-color);*/
+/*    }*/
 
-}
+/*}*/
 
 .btn:hover {
     box-shadow: none;
@@ -197,11 +197,16 @@ span {
 }
 
 .contact .card {
-    height: 100%;
+    height: 230px;
 }
 
 .add-cart {
     margin-left: 10px;
+}
+
+.contact .produs {
+    height: 120px;
+    width: 80px;
 }
 
 
@@ -441,4 +446,8 @@ h2 {
     0% {
         background: var(--main-color);
     }
+    25% {
+        background: var(--main-color);
+    }
+}
 

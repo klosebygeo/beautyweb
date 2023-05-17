@@ -14,8 +14,10 @@
         <div class="row">
           {% for product in products %}
           <div class="col-md-4 mb-4">
-             <div class="card" style="height: 180px;">
-              <img class="produs img-fluid" src="{% static product.image.url %}" class="card-img-top" alt="Image">
+             <div class="card">
+              <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
+                <img class="produs img-fluid" src="{% static product.image.url %}" class="card-img-top"  alt="Image">
+              </a>
               <div class="card-body">
                 <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
                   <h5 class="card-title small">{{ product.name }}</h5>
