@@ -131,6 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR , 'static')]
 
+SENDGRID_API_KEY='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'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'

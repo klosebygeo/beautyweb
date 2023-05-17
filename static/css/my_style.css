@@ -163,6 +163,11 @@ span {
     font-weight: 600;
 }
 
+    25% {
+        background: var(--bg-color);
+    }
+
+}
 
 .btn:hover {
     box-shadow: none;
@@ -260,6 +265,29 @@ span {
     width: 100%;
 }
 
+.container {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container span {
+    position: absolute;
+    left: 0;
+    width:32px;
+    height: 6px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.2) rotate(calc(var(--i) *
+    (360deg / 50)));
+    animation: animateBlink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+}
+
 .login-wrapper {
     display: flex;
     justify-content: center;
@@ -348,6 +376,7 @@ h2 {
     color: var(--main-color);
     text-decoration: none;
     font-weight: 600;
+
 }
 
 /*BREAKPOINTS*/
@@ -407,4 +436,8 @@ h2 {
   align-items: center;
 }
 
+@keyframes animateBlink {
+    0% {
+        background: var(--main-color);
+    }
 

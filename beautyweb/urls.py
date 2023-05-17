@@ -27,7 +27,8 @@ urlpatterns = [
     path('shop/', include('shop.urls')),
     path('', include('employee.urls')),
     path('', include('programari.urls')),
-    path("login/", views.LoginView.as_view(form_class=AuthenticationNewForm), name="login"),
+    path('user/', include('userextend.urls')),
+
     path("password_change/", views.PasswordChangeView.as_view(form_class=PasswordChangeNewForm),name="password_change"),
     path('', include('django.contrib.auth.urls')),
     path('', include('userextend.urls')),
