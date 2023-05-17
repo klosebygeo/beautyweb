@@ -73,8 +73,7 @@ class UserCreateView(CreateView):
             subject = 'Felicitari! Ai un cont nou in aplicatie!'
 
             # Incarca template-ul e-mailului
-            context = {'user':new_user
-                       }
+            context = {'user':new_user}
             content = render_to_string('mail.html',context)
 
             # Genereaza continutul e-mailului din template

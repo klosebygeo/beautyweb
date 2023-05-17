@@ -20,6 +20,7 @@ defusedxml==0.7.1
 dill==0.3.6
 distlib==0.3.6
 Django==4.2.1
+django-environ==0.10.0
 django-filter==23.2
 dnspython==2.3.0
 executing==1.2.0
