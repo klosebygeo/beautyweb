@@ -19,10 +19,10 @@
                                     <h5 class="card-title">{{ product.name }}</h5>
                                     <p class="card-text">Pret: {{ product.price }} RON</p>
                                     <p class="card-text">Cantitate: {{ product.quantity }} ({{ product.um }})</p>
-                                    <p class="card-text">Descriere: {{ product.description }}</p>
+                                    <p class="card-text">Descriere: {{ product.description|linebreaks }}</p>
                                 </div>
-                                    <div class="add-cart mb-4"><a href="" class="btn btn-primary">Adauga in cos</a>
-                                    </div>
+                                <div class="add-cart mb-4">
+                                    <a href="" class="btn btn-primary">Adauga in cos</a>
                                 </div>
                             </div>
                         </div>

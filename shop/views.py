@@ -58,3 +58,14 @@ class ProductDetailView(DetailView):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product_description'] = self.object.description
         return context
+
+
+from django.shortcuts import redirect
+
+def add_to_cart(request, product_id):
+    # Retrieve the product based on the product_id
+    # Add the product to the cart
+    # Implement your logic here
+
+    # Redirect to a success page or the product listing page
+    return redirect('shop')
