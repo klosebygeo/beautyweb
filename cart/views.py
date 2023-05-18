@@ -1,10 +1,13 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, TemplateView
 from .models import Cart
+
+class CartView(TemplateView):
+    template_name='addcart/addcart.html'
 
 class RegisterProduct(CreateView):
     model = Cart
     template_name = 'addcart/addcart.html'
-
+#
 class AllProducts(ListView):
     template_name = 'addcart/addcart.html'
 
