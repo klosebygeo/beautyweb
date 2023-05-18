@@ -23,6 +23,7 @@ Django==4.2.1
 django-environ==0.10.0
 django-filter==23.2
 dnspython==2.3.0
+environ==1.0
 executing==1.2.0
 fastjsonschema==2.16.3
 filelock==3.8.0
@@ -49,6 +50,8 @@ MarkupSafe==2.1.2
 matplotlib-inline==0.1.6
 mccabe==0.7.0
 mistune==2.0.5
+mysql==0.0.3
+mysqlclient==2.1.1
 nbclient==0.7.2
 nbformat==5.7.3
 nest-asyncio==1.5.6
@@ -76,6 +79,8 @@ python-dateutil==2.8.2
 python-http-client==3.3.7
 python-json-logger==2.0.7
 pytz==2022.7.1
+pywin32==305
+pywinpty==2.0.10
 PyYAML==6.0
 pyzmq==25.0.1
 qtconsole==5.4.1

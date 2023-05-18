@@ -22,7 +22,7 @@
                                     <p class="card-text">Descriere: {{ product.description|linebreaks }}</p>
                                 </div>
                                 <div class="add-cart mb-4">
-                                    <a href="" class="btn btn-primary">Adauga in cos</a>
+                                    <a href="{%  url 'addcart' request.user.id product.id  %}" class="btn btn-primary">Adauga in cos</a>
                                 </div>
                             </div>
                         </div>
