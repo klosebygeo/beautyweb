@@ -84,7 +84,7 @@ class UserCreateView(CreateView):
             mail.add_content(Content("text/html", content))
 
             # Trimite e-mailul
-            response = sg.client.mail.send.post(request_body=mail.get())
+            sg.client.mail.send.post(request_body=mail.get())
 
         return redirect('login')
 
