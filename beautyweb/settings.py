@@ -136,6 +136,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR , 'static')]
 
 SENDGRID_API_KEY=env('SENDGRID_KEY')
 
+
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'

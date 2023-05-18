@@ -4,40 +4,49 @@
 
 {% block content %}
     <section class="login-wrapper">
-        <div class="container">
+{#        <div class="container">#}
             <div class="login-wrapper">
                 <div class="login-box">
                     <h3 class="text-center"> Sign up</h3>
-{#                    <form method="post">#}
-{#                        <div class="input-box">#}
-{#                            <input type="text" required>#}
-{#                            <label for="">Username</label>#}
-{#                        </div>#}
-{#                        <div class="input-box">#}
-{#                            <input type="email" required>#}
-{#                            <label for="">Email</label>#}
-{#                        </div>#}
-{#                        <div class="input-box">#}
-{#                            <input type="password" required>#}
-{#                            <label for="">Password</label>#}
-{#                        </div>#}
-{#                        <div class="forgot-pass">#}
-{#                            <a href="#">Forgot your password?</a>#}
-{#                        </div>#}
-{#                        <button type="submit" class="btn-login">Login</button>#}
-{#                        <div class="signup-link">#}
-{#                            <p>Already have an account? <a href="#" class="signIN-link">Sign in</a></p>#}
-{#                        </div>#}
-{#                    </form>#}
                     <form method="post">
                         {% csrf_token %}
-                        <div class="card-body">
-                            {{ form.as_p }}
+                        <div class="input-box">
+                           {{ form.first_name }}
+                            <label for="{{ form.first_name.id_for_label }}">First name</label>
                         </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-secondary">Create</button>
+                                                <div class="input-box">
+                           {{ form.last_name }}
+                            <label for="{{ form.last_name.id_for_label }}">Last name</label>
+                        </div>
+                        <div class="input-box">
+                            {{ form.email }}
+                            <label for="{{ form.email.id_for_label }}">Email</label>
+                        </div>
+                        <div class="input-box">
+                            {{ form.password1 }}
+                            <label for="{{ form.password1.id_for_label }}">Password</label>
+                        </div>
+                        <div class="input-box">
+                            {{ form.password2 }}
+                            <label for="{{ form.password2.id_for_label }}">Password</label>
+                        </div>
+                        <div class="forgot-pass">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                        <button type="submit" class="btn-login">Login</button>
+                        <div class="signup-link">
+                            <p>Already have an account? <a href="#" class="signIN-link">Sign in</a></p>
                         </div>
                     </form>
+{#                    <form method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <div class="card-body">#}
+{#                            {{ form.as_p }}#}
+{#                        </div>#}
+{#                        <div class="card-footer text-center">#}
+{#                            <button type="submit" class="btn btn-outline-secondary">Create</button>#}
+{#                        </div>#}
+{#                    </form>#}
 
                 </div>
             </div>
@@ -93,7 +102,7 @@
             <span style="--i:49;"></span>
 
 
-        </div>
+{#        </div>#}
     </section>
 
 {% endblock %}
