@@ -32,5 +32,4 @@ urlpatterns = [
     path("password_change/", views.PasswordChangeView.as_view(form_class=PasswordChangeNewForm),name="password_change"),
     path('', include('django.contrib.auth.urls')),
 
-
 ]
