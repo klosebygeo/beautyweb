@@ -47,7 +47,8 @@
 {#                  </div>#}
                     <div class="col-auto">
                     <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>
-                    <a href="{% url 'addcart' request.user.id product.id %}" class="btn btn-sm btn-primary add-to-cart">Adauga in cos</a>
+{#                    <a href="{% url 'addcart' request.user.id product.id %}" class="btn btn-sm btn-primary add-to-cart">Adauga in cos</a>#}
+                    <a href="{% url 'addcart' 1 2  %}" class="btn btn-sm btn-primary add-to-cart">Adauga in cos</a>
                   </div>
 
                 </div>
