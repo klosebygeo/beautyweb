@@ -74,14 +74,6 @@ section {
 
 }
 
-.cart {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 10px;
-    border-radius: 3px;
-    width: 80px;
-}
 
 .logo {
     font-size: 2.5rem;
@@ -441,7 +433,40 @@ h2 {
      padding: 15px;
      text-align: center;
  }
+ .cart{
+     display: flex;
+     background-color: var(--bg-color);
+     justify-content: space-between;
+     align-items: center;
+     padding: 7px 10px;
+     border-radius: 3px;
+     width: 80px;
+ }
 
+
+.cart p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: #1f242d;
+}
+
+
+
+  #count {
+    position: absolute;
+    top: -5px; /* Reglați această valoare pentru a ajusta poziționarea verticală */
+    right: -5px; /* Reglați această valoare pentru a ajusta poziționarea orizontală */
+    background-color: var(--main-color); /* Opțional: adăugați un fundal roșu pentru numărul de produse */
+    color: white; /* Opțional: adăugați culoarea textului pentru numărul de produse */
+    padding: 2px 5px; /* Opțional: reglați aceste valori pentru a ajusta dimensiunea fundalului */
+    border-radius: 50%; /* Opțional: rotunjiți colțurile fundalului */
+    font-size: 12px; /* Opțional: reglați această valoare pentru a ajusta dimensiunea textului */
+  }
  .head {
      background-color: var(--main-color);
      border-radius: 3px;
@@ -498,10 +523,55 @@ h2 {
      height: 110px;
  }
 
- .bottom h2 {
+h2 {
      font-size: 20px;
-     color: #F000FC;
+     color: var(--main-color);
  }
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background: #F000FC;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: var(--text-color)
+}
+button:hover{
+    background-color: #F000FC;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--second-bg-color);
+    border-bottom: 1px solid var(--main-color);
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+
+.row-img {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+
+.fa-trash:hover{
+    cursor: pointer;
+    color: aqua;
+}
 
 
 

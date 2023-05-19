@@ -9,7 +9,7 @@
             <a class="nav-link" href="{% url 'shop' %}">Magazin</a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Programeaza-te
+                    Programare
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}">Creaza un nou serviciu</a></li>
@@ -24,9 +24,9 @@
                     Angajati
                 </a>
                 <ul class="dropdown-menu">
+
                     <li><a class="dropdown-item" href="{% url 'create-employee' %}"><i class="fa-solid fa-plus"></i> Creaza un nou angajat</a></li>
-                    <li><a class="dropdown-item" href="{% url 'list-of-employees' %}"><i class="fa-solid fa-list"></i> Lista angajati</a>
-                    </li>
+                    <li><a class="dropdown-item" href="{% url 'list-of-employees' %}"><i class="fa-solid fa-list"></i> Lista angajati</a></li>
                 </ul>
             </li>
             {% if request.user.is_authenticated%}
@@ -37,7 +37,7 @@
             <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
             {% endif %}
             <a href="{% url 'create-user' %}" class="nav-link"><i class="fa-solid fa-user-plus"></i></a>
-            <a href="{% url 'addcart' 1 2 %}" class="nav-link" ><i class="fa-solid fa-cart-shopping" ></i></a>
+            <a href="{% url 'addcart' 1 2 %}" class="cart" ><i class="fa-solid fa-cart-shopping" ><p id="count">0</p></i></a>
         </div>
     </nav>
 </header>
