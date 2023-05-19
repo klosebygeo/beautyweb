@@ -10,25 +10,25 @@ menuIcon.onclick = () => {
 const product = [
   {
     id: 0,
-    image: '../static/img/accesorii1.png',
+    image: '/static/img/sampon6.jpg',
     title: 'Barba',
     price: 120,
   },
   {
     id: 1,
-    image: '../static/img/sampon6.jpg',
+    image: '/static/img/sampon6.jpg',
     title: 'Sampon pentru ingrijirea parului',
     price: 110,
   },
   {
     id: 2,
-    image: '../static/img/accesorii6.png',
+    image: '/static/img/accesorii6.png',
     title: 'Accesorii',
     price: 60,
   },
   {
     id: 3,
-    image: '..static/img/accesorii4.png',
+    image: '/static/img/accesorii4.png',
     title: 'Accesorii',
     price: 65,
   }
