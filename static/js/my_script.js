@@ -34,13 +34,13 @@ const product = [
   }
 ];
 
-const addCart = (id) => {
+const addtocart = (id) => {
   // Implementați funcționalitatea adăugării produsului în coșul de cumpărături aici
   console.log(`Produsul cu id-ul ${id} a fost adăugat în coșul de cumpărături.`);
-};
+}
 
 const categories = [...new Set(product.map((item) =>
-{return item})];
+{return item}))];
 let i = 0;
 document.getElementById("root").innerHTML = categories.map((item) => {
   var { image, title, price } = item;
@@ -51,12 +51,12 @@ document.getElementById("root").innerHTML = categories.map((item) => {
       </div>
       <div class='bottom'>
         <p>${title}</p>
-        <h2>$ ${price}.00</h2>`
-        <button onclick='addCart("+(i++)+")'>Add to cart</button>"+
+        <h2>$ ${price}.00</h2>`+
+        "<button onclick='addtoCart("+(i++)+")'>Add to cart</button>"+
       `</div>
     </div>`
   );
-}).join('')
+}).join('');
 
 var cart =[];
 
