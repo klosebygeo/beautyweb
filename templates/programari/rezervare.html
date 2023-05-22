@@ -4,13 +4,15 @@
 
 {% block content %}
     <br><br><br>
+    <form action="{% url 'rezervare-programare' %}" method="post">
+    {% csrf_token %}
     <section>
         <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
              tabindex="0">
             {% for service in all_services %}
                 <div class="row">
                     <span class="col-md-1 offset-md-3">
-                        <input type="checkbox" id="service-{{ service.id }}" value="{{ service.price }}"
+                        <input type="checkbox" name="{{ service.id }}" id="{{ service.id }}" value="{{ service.price }}"
                                class="service-checkbox">
                     </span>
                     <span class="col-md-4">
@@ -24,14 +26,16 @@
             <br>
             <div style="text-align: center;">
                 <h3 id="total-price-display">Total: 0 RON</h3>
-                <a href="{% url 'rezervare-programare' %}" class="btn btn-secondary">Rezerva</a>
+{#                <a id="rezervaBtn" href="{% url 'rezervare-programare' %}" class="btn btn-secondary" disabled role="button">Rezerva</a>#}
+                <button id="rezervaBtn" class="btn btn-secondary" disabled type="submit">Rezerva</button>
             </div>
 
         </div>
     </section>
-
+    </form>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            var services = [];
             var checkboxes = document.getElementsByClassName('service-checkbox');
             var totalPriceDisplay = document.getElementById('total-price-display');
 
@@ -44,8 +48,17 @@
                         }
                     }
                     totalPriceDisplay.textContent = 'Total: ' + totalPrice.toFixed(2) + ' RON';
+                    if (totalPrice!=0){
+                    $("#rezervaBtn").removeAttr("disabled").button('refresh');
+                }
+                else{
+                    $("#rezervaBtn").attr("disabled","disabled").button('refresh');
+                }
+
                 });
+
             }
+
         });
     </script>
 {% endblock %}

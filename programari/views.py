@@ -53,8 +53,18 @@ def rezervare(request):
     return render(request, 'programari/rezervare.html', {'all_services': all_services})
 
 
-class RezervareProgramareView(TemplateView):
+def rezerva_servicii(request):
+    if request.POST:
+        products = [int(item) for item in dict(request.POST) if item!='csrfmiddlewaretoken']
+        all_services = Service.objects.in_bulk(products)
+        # return render()
+
+    # de inserat in modelul de mai sus lista de all_services
+
+class RezervareProgramareView(CreateView):
     template_name = 'programari/rezervare_programare.html'
+    def post(self):
+        pass
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
