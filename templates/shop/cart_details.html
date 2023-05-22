@@ -11,6 +11,9 @@
                 <p>Cosul meu</p>
             </div>
             <div id="cartItem">Your cart is empty</div>
+            {% for product in cart_items %}
+                <p>{{ product.name }}</p>
+            {% endfor %}
             <div class="foot">
                 <h3>Total</h3>
                 <h2 id="total">$ 0.00</h2>
@@ -19,3 +22,9 @@
     </div>
 </section>
 {% endblock %}
+
+<script>
+    $(function(){
+
+    });
+</script>
