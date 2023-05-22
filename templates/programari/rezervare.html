@@ -5,11 +5,13 @@
 {% block content %}
     <br><br><br>
     <section>
-        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
+             tabindex="0">
             {% for service in all_services %}
                 <div class="row">
                     <span class="col-md-1 offset-md-3">
-                        <input type="checkbox" id="service-{{ service.id }}" value="{{ service.price }}" class="service-checkbox">
+                        <input type="checkbox" id="service-{{ service.id }}" value="{{ service.price }}"
+                               class="service-checkbox">
                     </span>
                     <span class="col-md-4">
                         <h4 id="scrollspyHeading1" style="font-size: 17px"><b>{{ service.name_of_service }}</b></h4>
@@ -20,15 +22,15 @@
                 </div>
             {% endfor %}
             <br>
-        <div style="text-align: center;">
-            <h3 id="total-price-display">Total: 0 RON</h3>
-        <a href="#" class="btn btn-secondary">Rezerva</a>
-        </div>
+            <div style="text-align: center;">
+                <h3 id="total-price-display">Total: 0 RON</h3>
+                <a href="{% url 'rezervare-angajat' %}" class="btn btn-secondary">Rezerva</a>
+            </div>
 
         </div>
     </section>
 
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             var checkboxes = document.getElementsByClassName('service-checkbox');
             var totalPriceDisplay = document.getElementById('total-price-display');

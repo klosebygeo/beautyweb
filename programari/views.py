@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView, TemplateView
 
 from programari.models import Service
 from programari.forms import ServiceForm, ServiceUpdateForm
@@ -50,4 +50,16 @@ class Rezervare(ListView):
 def rezervare(request):
     all_services = Service.objects.all()
     return render(request, 'programari/rezervare.html', {'all_services': all_services})
+
+
+class RezervareAngajatView(TemplateView):
+    template_name = 'programari/rezervare_angajat.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['employees'] = Employee.objects.all()
+        return context
+
+class CalendarProgramariView(TemplateView):
+    template_name = 'programari/calendar_programari.html'
 
