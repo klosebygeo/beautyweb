@@ -1,7 +1,7 @@
 from django.urls import path
 
 from programari import views
-from programari.views import RezervareAngajatView, CalendarProgramariView
+from programari.views import RezervareProgramareView
 
 urlpatterns = [
     path('creare_serviciu/', views.ServiceCreateView.as_view(), name='creare-serviciu'),
@@ -10,6 +10,6 @@ urlpatterns = [
     path('delete_service/<int:pk>', views.ServiceDeleteView.as_view(), name='delete-service'),
     path('details_service/<int:pk>', views.ServiceDetailView.as_view(), name='details-service'),
     path('rezervare/', views.Rezervare.as_view(), name='rezervare'),
-    path('rezervare/angajat/', RezervareAngajatView.as_view(), name='rezervare-angajat'),
-    path('rezervare/calendar/', CalendarProgramariView.as_view(), name='calendar-programari'),
+    path('rezervare/programare/', RezervareProgramareView.as_view(), name='rezervare-programare'),
+
 ]
