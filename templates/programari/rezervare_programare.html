@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Rezervare Angajat {% endblock %}
+{% block title %} Rezervare {% endblock %}
 
 {% block content %}
     <!-- Formular pentru alegerea angajatului -->
@@ -12,18 +12,19 @@
                 <option value="{{ employee.id }}">{{ employee.name }}</option>
             {% endfor %}
         </select>
-{#    widget pt calendar #}
-    <label for="datepicker">Alegeți data programării:</label>
+        {#    widget pt calendar #}
+        <label for="datepicker">Alegeți data programării:</label>
         <input type="text" name="datepicker" id="datepicker" class="datepicker">
         <button type="submit">Continuă</button>
     </form>
     <!-- Include fișierele JS și CSS pentru widget-ul de calendar -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.datepicker').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true,
