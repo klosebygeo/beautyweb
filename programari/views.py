@@ -45,3 +45,11 @@ class Rezervare(ListView):
     model = Service
     context_object_name = 'all_services'
     success_url = reverse_lazy('homepage')
+
+
+
+
+def rezervare(request):
+    all_services = Service.objects.all()
+    return render(request, 'programari/rezervare.html', {'all_services': all_services})
+

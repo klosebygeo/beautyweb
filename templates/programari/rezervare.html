@@ -5,26 +5,50 @@
 {% block content %}
     <br><br><br>
     <section>
-        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
-             tabindex="0">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
             {% for service in all_services %}
                 <div class="row">
-                <span class="col-md-1 offset-md-3">
-                    <input type="checkbox"/>
-                </span>
+                    <span class="col-md-1 offset-md-3">
+                        <input type="checkbox" id="service-{{ service.id }}" value="{{ service.price }}" class="service-checkbox">
+                    </span>
                     <span class="col-md-4">
-                        <h4 id="scrollspyHeading1" style="font-size: 17px"><b>{{ service }}</b></h4>
-                </span>
+                        <h4 id="scrollspyHeading1" style="font-size: 17px"><b>{{ service.name_of_service }}</b></h4>
+                    </span>
                     <span class="col-md-4">
                         <p style="font-size: 15px"><b>{{ service.price }}</b> RON</p>
-                </span>
+                    </span>
                 </div>
             {% endfor %}
-        <br>
+            <br>
         <div style="text-align: center;">
-        <a href="#" class="btn btn-secondary">Alege specialistul</a>
+            <h3 id="total-price-display">Total: 0 RON</h3>
+        <a href="#" class="btn btn-secondary">Rezerva</a>
         </div>
+
         </div>
     </section>
 
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var checkboxes = document.getElementsByClassName('service-checkbox');
+            var totalPriceDisplay = document.getElementById('total-price-display');
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].addEventListener('change', function () {
+                    var totalPrice = 0;
+                    for (var j = 0; j < checkboxes.length; j++) {
+                        if (checkboxes[j].checked) {
+                            totalPrice += parseFloat(checkboxes[j].value);
+                        }
+                    }
+                    totalPriceDisplay.textContent = 'Total: ' + totalPrice.toFixed(2) + ' RON';
+                });
+            }
+        });
+    </script>
 {% endblock %}
+
+
+
+
+
