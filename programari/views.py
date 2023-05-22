@@ -57,7 +57,7 @@ def rezerva_servicii(request):
     if request.POST:
         products = [int(item) for item in dict(request.POST) if item!='csrfmiddlewaretoken']
         all_services = Service.objects.in_bulk(products)
-        # return render()
+        return render(request, 'programari/rezervare_programare.html', {'all_services': all_services})
 
     # de inserat in modelul de mai sus lista de all_services
 
