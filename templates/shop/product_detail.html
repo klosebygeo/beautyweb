@@ -13,17 +13,15 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12 mb-4">
-                            <div class="card">
-                                <img class="produs" src="{% static product.image.url %}" class="card-img-top" alt="Image">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ product.name }}</h5>
-                                    <p class="card-text">Pret: {{ product.price }} RON</p>
-                                    <p class="card-text">Cantitate: {{ product.quantity }} ({{ product.um }})</p>
-                                    <p class="card-text">Descriere: {{ product.description|linebreaks }}</p>
-                                </div>
-                                <div class="add-cart mb-4">
-                                    <a href="{%  url 'addcart' request.user.id product.id  %}" class="btn btn-primary">Adauga in cos</a>
-                                </div>
+                            <img class="produs" src="{% static product.image.url %}" alt="Image">
+                            <div class="product-details">
+                                <h5 class="product-name">{{ product.name }}</h5>
+                                <p class="product-price">Pret: {{ product.price }} RON</p>
+                                <p class="product-quantity">Cantitate: {{ product.quantity }} ({{ product.um }})</p>
+                                <p class="product-description">Descriere: {{ product.description|linebreaks }}</p>
+                            </div>
+                            <div class="add-cart mb-4">
+                                <a href="{% url 'addcart' request.user.id product.id %}" class="btn btn-primary">Adauga in cos</a>
                             </div>
                         </div>
                     </div>
