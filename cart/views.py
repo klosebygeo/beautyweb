@@ -34,7 +34,7 @@ class RegisterProduct(CreateView):
     template_name = 'addcart/addcart.html'
     fields = '__all__'  # sau specificați aici câmpurile dorite
 
-
+# conversie in functie cu http response
 class AllProducts(ListView):
     template_name = 'addcart/addcart.html'
     context_object_name = 'cart_items'
