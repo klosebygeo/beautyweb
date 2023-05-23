@@ -4,61 +4,91 @@
 {% block title %}Lista de produse{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-  <section class="contact">
-    <div class="row" style="z-index: -1;">
-      <div class="col-md-2">
-        {% include './vertical_navbar.html' %}
-      </div>
-      <div class="col-md-8">
-        <div class="row">
-          {% for product in products %}
-          <div class="col-md-4 mb-4">
-             <div class="card">
-              <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
-                <img class="produs img-fluid" src="{% static product.image.url %}" class="card-img-top"  style="width: 32%; height: auto;">
-              </a>
-              <div class="card-body">
-                <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
-                  <h5 class="card-title small">{{ product.name }}</h5>
-                  <p class="card-text small">Pret: {{ product.price }} RON</p>
-                </a>
-              </div>
-              <div class="card-footer">
-                <div class="row align-items-center">
-                  <div class="col">
-                    <select id="{{ product.id }}" class="form-select form-select-sm" >
-                      <option value="1" selected>1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <!-- Add more options here -->
-                    </select>
-                  </div>
-{#                  <div class="col-auto">#}
-{#                    <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>#}
-{#                    <button type="button" class="btn btn-sm btn-primary add-to-cart" data-product-id="{{ product.id }}">Adauga in cos</button>#}
-{#                  </div>#}
-                    <div class="col-auto">
-                    <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>
-{#                    <a href="{% url 'addcart' request.user.id product.id %}" class="btn btn-sm btn-primary add-to-cart">Adauga in cos</a>#}
-                    <a href="{% url 'addcart' product.id  %}" class="btn btn-sm btn-primary add-to-cart">Adauga in cos</a>
-                  </div>
+ {% csrf_token %}
+    <script>
+        function submit_form(quantity_selector, product_id) {
+            var quantity_value = $(quantity_selector).val();
+            var token = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            $.ajax({
+                type: 'POST',
+                url: '{% url 'addcart' %}',
+                data: {
+                    'quantity': quantity_value,
+                    'product_id': product_id,
+                    'csrfmiddlewaretoken': token
+                },
+                success: function (json) {
+                    $("#count").text(json.count);
+                },
+                error: function (xhr, errmsg, err) {
+                    console.log(xhr.responseText);
+                }
 
+            });
+        }
+    </script>
+    <div class="container-fluid">
+        <section class="contact">
+            <div class="row" style="z-index: -1;">
+                <div class="col-md-2">
+                    {% include './vertical_navbar.html' %}
                 </div>
-              </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        {% for product in products %}
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
+                                        <img class="produs img-fluid" src="{% static product.image.url %}"
+                                             class="card-img-top" style="width: 32%; height: auto;">
+                                    </a>
+                                    <div class="card-body">
+                                        <a href="{% url 'details' product.id %}" class="cursor-pointer no-underline">
+                                            <h5 class="card-title small">{{ product.name }}</h5>
+                                            <p class="card-text small">Pret: {{ product.price }} RON</p>
+                                        </a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <select id="quantity-{{ product.id }}"
+                                                        class="form-select form-select-sm">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <!-- Add more options here -->
+                                                </select>
+                                            </div>
+                                            {#                  <div class="col-auto">#}
+                                            {#                    <a href="{% url 'details' product.id %}" class="btn btn-sm btn-primary me-2">Detalii</a>#}
+                                            {#                    <button type="button" class="btn btn-sm btn-primary add-to-cart" data-product-id="{{ product.id }}">Adauga in cos</button>#}
+                                            {#                  </div>#}
+                                            <div class="col-auto">
+                                                <a href="{% url 'details' product.id %}"
+                                                   class="btn btn-sm btn-primary me-2">Detalii</a>
+                                                <a href="#" class="btn btn-sm btn-primary"
+                                                   onclick=submit_form("#quantity-{{ product.id }}",{{ product.id }})>Adauga
+                                                    in cos</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+        </section>
     </div>
-  </section>
-</div>
+
+{% endblock %}
+{% block javascript %}
+
 {% endblock %}

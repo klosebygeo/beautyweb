@@ -1,3 +1,4 @@
+from django.views import View
 from django.views.generic import ListView, DetailView
 from .models import Product
 
@@ -49,6 +50,10 @@ class AccesoriiListView(ListView):
         products = Product.objects.filter(tip_produs=3).all()
         context['products'] = products
         return context
+
+class ProductdeleteView(View):
+    model = Product
+    template_name = 'shop/product_detail.html'
 
 class ProductDetailView(DetailView):
     model = Product
