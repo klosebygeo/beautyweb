@@ -1,1 +1,9 @@
-[{"model": "shop.product", "pk": 1, "fields": {"name": "Sampon Bain Magistral nutritiv pentru par uscat si deteriorat. 1000 ml", "price": 255.0, "quantity": 1000, "description": 
+[
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "name": "Sampon Bain Magistral nutritiv pentru par uscat si deteriorat. 1000 ml",
+      "price": 255.0,
+      "quantity": 1000,
+      "description":

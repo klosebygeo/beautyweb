@@ -1,5 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView, TemplateView
 
 from employee.models import Employee
@@ -54,7 +55,7 @@ def rezervare(request):
 
 
 def rezerva_servicii(request):
-    if request.POST:
+    if request.POST and request.user.is_authenticated:
         current_user_id=request.user.id
         services_ids = [int(item) for item in dict(request.POST) if item!='csrfmiddlewaretoken']
         for service_id in services_ids:
@@ -62,6 +63,7 @@ def rezerva_servicii(request):
             serviciu.save()
         all_employees = Employee.objects.all()
         return render(request, 'programari/rezervare_programare.html', {'employees': all_employees})
+    return HttpResponseRedirect(reverse("login"))
 
     # de inserat in modelul de mai sus lista de all_services
 

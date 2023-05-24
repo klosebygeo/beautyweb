@@ -21,6 +21,7 @@
 html{
     font-size: 62.5%;
     overflow-x: hidden;
+    padding:1%!important;
 }
 
 body {
@@ -649,3 +650,6 @@ button:hover{
     }
 }
 
+li{
+    list-style-type: none!important;
+}

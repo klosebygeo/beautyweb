@@ -4,10 +4,10 @@
 
 {% block content %}
     <!-- Formular pentru alegerea angajatului -->
-    <div class="row">
+    <div class="row" >
      {% for employee in employees %}
-                <option value="{{ employee.id }}">{{ employee.name }}</option>
-{#                <p class="test_rez">{{ employee.id }}-{{ employee.name }}</p>#}
+{#                <option value="{{ employee.id }}">{{ employee.name }}</option>#}
+                <p class="test_rez">{{ employee.id }}-{{ employee.name }}</p>
             {% endfor %}
     </div>
     <form method="POST">

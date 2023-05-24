@@ -1,43 +1,41 @@
-<header class="header">
+<nav class="navbar">
     <a class="navbar-brand" style="font-size: 20px" href="{% url 'homepage' %}">Rise & Shine Beauty Salon</a>
-
     <i class='bx bx-menu' id="menu-icon"></i>
-
-    <nav class="navbar">
-        <div class="container-fluid">
-            <a class="nav-link" href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a>
-            <a class="nav-link" href="{% url 'shop' %}">Magazin</a>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Servicii
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}"><i class="fa-solid fa-plus"></i> Creaza un nou serviciu</a></li>
-                    <li><a class="dropdown-item" href="{% url 'list-of-services' %}"><i class="fa-solid fa-list"></i> Servicii</a>
-                    </li>
-                </ul>
+    <a class="nav-link" href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a>
+    <a class="nav-link" href="{% url 'shop' %}">Magazin</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Servicii
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'creare-serviciu' %}"><i class="fa-solid fa-plus"></i> Creaza un
+                nou serviciu</a></li>
+            <li><a class="dropdown-item" href="{% url 'list-of-services' %}"><i class="fa-solid fa-list"></i>
+                Servicii</a>
             </li>
-            <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    Angajati
-                </a>
-                <ul class="dropdown-menu">
+        </ul>
+    </li>
+    <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Angajati
+        </a>
+        <ul class="dropdown-menu">
 
-                    <li><a class="dropdown-item" href="{% url 'create-employee' %}"><i class="fa-solid fa-plus"></i> Creaza un nou angajat</a></li>
-                    <li><a class="dropdown-item" href="{% url 'list-of-employees' %}"><i class="fa-solid fa-list"></i> Lista angajati</a></li>
-                </ul>
-            </li>
-            {% if request.user.is_authenticated%}
-            <a href="{% url 'logout' %}" class="btn btn-outline-success">Logout</a>
-                <span>Welcome {{ request.user.username }}</span>
-            {% endif %}
-            {% if not request.user.is_authenticated%}
-            <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
-            {% endif %}
-            <a href="{% url 'create-user' %}" class="nav-link"><i class="fa-solid fa-user-plus"></i></a>
-            <a href="{% url 'view-cart' %}" class="cart" ><i class="fa-solid fa-cart-shopping" ><p id="count">0</p></i></a>
-        </div>
-    </nav>
-</header>
+            <li><a class="dropdown-item" href="{% url 'create-employee' %}"><i class="fa-solid fa-plus"></i> Creaza un
+                nou angajat</a></li>
+            <li><a class="dropdown-item" href="{% url 'list-of-employees' %}"><i class="fa-solid fa-list"></i> Lista
+                angajati</a></li>
+        </ul>
+    </li>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn btn-outline-success">Logout</a>
+        <span>Welcome {{ request.user.username }}</span>
+    {% endif %}
+    {% if not request.user.is_authenticated %}
+        <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
+    {% endif %}
+    <a href="{% url 'create-user' %}" class="nav-link"><i class="fa-solid fa-user-plus"></i></a>
+    <a href="{% url 'view-cart' %}" class="cart"><i class="fa-solid fa-cart-shopping"><p id="count">0</p></i></a>
+</nav>
