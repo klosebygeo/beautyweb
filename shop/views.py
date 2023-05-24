@@ -63,3 +63,5 @@ class ProductDetailView(DetailView):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product_description'] = self.object.description
         return context
+
+

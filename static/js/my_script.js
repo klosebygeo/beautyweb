@@ -6,39 +6,39 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
-
-const product = [
-    {
-        id: 0,
-        image: '/static/img/sampon6.jpg',
-        title: 'Barba',
-        price: 120,
-    },
-    {
-        id: 1,
-        image: '/static/img/sampon6.jpg',
-        title: 'Sampon pentru ingrijirea parului',
-        price: 110,
-    },
-    {
-        id: 2,
-        image: '/static/img/accesorii6.png',
-        title: 'Accesorii',
-        price: 60,
-    },
-    {
-        id: 3,
-        image: '/static/img/accesorii4.png',
-        title: 'Accesorii',
-        price: 65,
-    }
-];
-
-const categories = [...new Set(product.map((item) => {
-    return item
-}))]
-let i = 0;
 //
+// const product = [
+//     {
+//         id: 0,
+//         image: '/static/img/sampon6.jpg',
+//         title: 'Barba',
+//         price: 120,
+//     },
+//     {
+//         id: 1,
+//         image: '/static/img/sampon6.jpg',
+//         title: 'Sampon pentru ingrijirea parului',
+//         price: 110,
+//     },
+//     {
+//         id: 2,
+//         image: '/static/img/accesorii6.png',
+//         title: 'Accesorii',
+//         price: 60,
+//     },
+//     {
+//         id: 3,
+//         image: '/static/img/accesorii4.png',
+//         title: 'Accesorii',
+//         price: 65,
+//     }
+// ];
+//
+// const categories = [...new Set(product.map((item) => {
+//     return item
+// }))]
+// let i = 0;
+// //
 // document.getElementById('root').innerHTML = categories.map((item) => {
 //     var {image, title, price} = item;
 //     return (
@@ -54,13 +54,13 @@ let i = 0;
 //     </div>`
 //     )
 // }).join('')
-
-var cart = [];
-
-function addtocart(a) {
-    cart.push({...categories[a]});
-    displaycart();
-}
+//
+// var cart = [];
+//
+// function addtocart(a) {
+//     cart.push({...categories[a]});
+//     displaycart();
+// }
 
 function delElement(a) {
     cart.splice(a, 1);

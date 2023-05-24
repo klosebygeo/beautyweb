@@ -29,8 +29,14 @@
                                     <div class="card-footer">
                                         <div class="row align-items-center">
                                             <div class="col-auto">
-                                                <a href="{% url 'delete' item.id %}"
-                                                   class="btn btn-sm btn-primary me-2">Delete</a>
+{#                                                <a href="{% url 'delete' item.id %}"#}
+{#                                                   class="btn btn-sm btn-primary me-2">Delete</a>#}
+
+                                                <form method="post" action="{% url 'delete' item.id %}">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-sm btn-primary me-2">Delete
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -48,8 +54,8 @@
                                     <p>Cosul meu</p>
                                 </div>
                                 {% if cart_items %}
-                                <div id="cartItem">Your cart contains {{ cart_items|length }} items</div>
-                                    {% else %}
+                                    <div id="cartItem">Your cart contains {{ cart_items|length }} items</div>
+                                {% else %}
                                     <div id="cartItem">Your cart is empty</div>
                                 {% endif %}
 

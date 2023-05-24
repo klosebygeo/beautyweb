@@ -1,8 +1,8 @@
 from django.db.models import Sum
 from django.http import JsonResponse
-from django.shortcuts import redirect, render
-from django.views.generic import CreateView, ListView
-
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView
 from shop.models import Product
 from .models import Cart
 
@@ -35,10 +35,23 @@ class RegisterProduct(CreateView):
     fields = '__all__'  # sau specificați aici câmpurile dorite
 
 # conversie in functie cu http response
-class AllProducts(ListView):
-    template_name = 'addcart/addcart.html'
-    context_object_name = 'cart_items'
+# class AllProducts(ListView):
+#     template_name = 'addcart/addcart.html'
+#     context_object_name = 'cart_items'
+#
+#     def get_queryset(self):
+#         user_id = self.request.user.id
+#         return Cart.objects.filter(id_user=user_id, status=False)
 
-    def get_queryset(self):
-        user_id = self.request.user.id
-        return Cart.objects.filter(id_user=user_id, status=False)
+def all_products(request):
+    template_name = 'addcart/addcart.html'
+    context = {}
+    user_id = request.user.id
+    cart_items = Cart.objects.filter(id_user=user_id, status=False)
+    context["cart_items"] = cart_items
+    return render(request, template_name, context)
+
+class ProductDeleteView(DeleteView):
+    template_name = 'addcart/product_confirm_delete.html'
+    model = Cart
+    success_url = reverse_lazy('view-cart')

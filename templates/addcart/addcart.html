@@ -3,6 +3,29 @@
 {% block title %}Cart{% endblock %}
 
 {% block content %}
+    {% csrf_token %}
+    <script>
+        function submit_form(quantity_selector, product_id) {
+            var quantity_value = $(quantity_selector).val();
+            var token = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            $.ajax({
+                type: 'POST',
+                url: '{% url 'addcart' %}',
+                data: {
+                    'quantity': quantity_value,
+                    'product_id': product_id,
+                    'csrfmiddlewaretoken': token
+                },
+                success: function (json) {
+                    $("#count").text(json.count);
+                },
+                error: function (xhr, errmsg, err) {
+                    console.log(xhr.responseText);
+                }
+
+            });
+        }
+    </script>
 <section>
     <div class="container2" style="float: right;">
         <div id="root"></div>
