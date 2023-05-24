@@ -92,4 +92,13 @@ function displaycart(a) {
 }
 
 
+$(document).ready(
+            $.ajax({
+                type: 'GET',
+                url: document.location.origin +"/cart/items",
+                success: function (json) {
+                    $("#count").text(json.count);
+                }
+            })
+);
 

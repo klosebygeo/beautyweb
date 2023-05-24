@@ -34,6 +34,7 @@ class RegisterProduct(CreateView):
     template_name = 'addcart/addcart.html'
     fields = '__all__'  # sau specificați aici câmpurile dorite
 
+
 # conversie in functie cu http response
 # class AllProducts(ListView):
 #     template_name = 'addcart/addcart.html'
@@ -51,7 +52,18 @@ def all_products(request):
     context["cart_items"] = cart_items
     return render(request, template_name, context)
 
+
 class ProductDeleteView(DeleteView):
     template_name = 'addcart/product_confirm_delete.html'
     model = Cart
     success_url = reverse_lazy('view-cart')
+
+
+def allways_cart(request):
+    response = {}
+    response["count"] = 0
+    if request.user.is_authenticated:
+        user_id = request.user.id
+        quantity_of_products = Cart.objects.filter(id_user=user_id, status=0).aggregate(Sum('quantity'))
+        response['count'] = quantity_of_products['quantity__sum']
+        return JsonResponse(response)
