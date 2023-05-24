@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView, TemplateView
 
 from employee.models import Employee
-from programari.models import Service
+from programari.models import Service, RezervareServicii
 from programari.forms import ServiceForm, ServiceUpdateForm
 
 
@@ -55,9 +55,13 @@ def rezervare(request):
 
 def rezerva_servicii(request):
     if request.POST:
-        products = [int(item) for item in dict(request.POST) if item!='csrfmiddlewaretoken']
-        all_services = Service.objects.in_bulk(products)
-        return render(request, 'programari/rezervare_programare.html', {'all_services': all_services})
+        current_user_id=request.user.id
+        services_ids = [int(item) for item in dict(request.POST) if item!='csrfmiddlewaretoken']
+        for service_id in services_ids:
+            serviciu=RezervareServicii(id_service_id=service_id, id_user=current_user_id)
+            serviciu.save()
+        all_employees = Employee.objects.all()
+        return render(request, 'programari/rezervare_programare.html', {'employees': all_employees})
 
     # de inserat in modelul de mai sus lista de all_services
 

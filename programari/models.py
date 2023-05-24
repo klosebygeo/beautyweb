@@ -24,6 +24,6 @@ STATUS = (
 class RezervareServicii(models.Model):
     id_service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
     id_user = models.IntegerField()
-    status = models.CharField(choices=STATUS, max_length=9)
+    status = models.CharField(choices=STATUS, max_length=9, default='draft')
     id_angajat = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True)
-    date = models.DateTimeField()
+    date = models.DateTimeField(null=True)
