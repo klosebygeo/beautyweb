@@ -3,7 +3,6 @@
 {% block title %} Rezervare {% endblock %}
 
 {% block content %}
-    <br><br><br>
     <form action="{% url 'rezervare-programare' %}" method="post">
     {% csrf_token %}
     <section>
