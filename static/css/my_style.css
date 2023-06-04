@@ -206,10 +206,10 @@ span {
     font-size: 4.5rem;
 }
 
-.contact h2 {
-    margin-bottom: 3rem;
-
-}
+ .container-fluid {
+        display: flex;
+        flex-direction: row;
+    }
 
 .contact form {
     max-width: 70rem;
@@ -304,14 +304,13 @@ span {
     width: 100%;
 }
 
-.container {
-    position: relative;
-    width: 256px;
-    height: 256px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/*.container {*/
+/*    position: relative;*/
+/*    height: 256px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
 .container span {
     position: absolute;
@@ -418,24 +417,38 @@ h2 {
 
 }
 /*Customize Cart*/
-.container2 {
+.product-list {
     display: flex;
-    width: 70%;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    flex-basis: 32%;
+    margin-bottom: 40px;
+}
+
+.product-item .card {
+    height: 110%;
+}
+
+.cart-sidebar {
+    padding: 10px;
+    height: 100%;
 }
 
 #root{
-     width: 60%;
+     width: 20%;
      display: grid;
      grid-template-columns: repeat(2,1fr);
      grid-gap: 20px;
  }
 
  .sidebar {
-     width: 40%;
+     width: 60%;!important;
      border-radius: 5px;
      background-color: var(--second-bg-color);
-     margin-left: 20px;
+     margin-left: 10px;
      padding: 15px;
      text-align: center;
  }
@@ -446,7 +459,7 @@ h2 {
      align-items: center;
      padding: 7px 10px;
      border-radius: 3px;
-     width: 80px;
+     width: 180px;
  }
 
 
@@ -582,8 +595,6 @@ button:hover{
 
 
 
-
-
 /*BREAKPOINTS*/
 @media (max-width: 1200px) {
     html {
@@ -653,3 +664,9 @@ button:hover{
 li{
     list-style-type: none!important;
 }
+
+.product-details {
+    font-size: 13px;
+}
+
+
