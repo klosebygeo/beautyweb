@@ -27,3 +27,14 @@ class RezervareServicii(models.Model):
     status = models.CharField(choices=STATUS, max_length=9, default='draft')
     id_angajat = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True)
     date = models.DateTimeField(null=True)
+
+
+
+from django.contrib.auth.models import User
+
+class Programare(models.Model):
+    angajat = models.ForeignKey(User, on_delete=models.CASCADE)
+    data_ora = models.DateTimeField()
+
+    def __str__(self):
+        return f"Programare cu {self.angajat.username} la {self.data_ora}"
